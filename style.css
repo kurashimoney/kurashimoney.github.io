@@ -1,0 +1,88 @@
+:root {
+  --paper: #faf7f0;
+  --grid: #ece6d8;
+  --ink: #212730;
+  --sub: #5c6470;
+  --accent: #1f6f5c;
+  --accent-soft: #e3efe9;
+  --mark: #ffe26e;
+  --line: #ded6c4;
+  --card: #ffffff;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 32px 32px;
+  color: var(--ink);
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+a { color: var(--accent); text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+
+header.site {
+  padding: 20px 0 8px;
+}
+header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--accent); font-weight: 700; font-size: 18px; }
+.brand .mark { width: 34px; height: 34px; border-radius: 8px; background: var(--accent); color: #fff; display: grid; place-items: center; font-weight: 900; font-size: 18px; }
+nav.site { display: flex; gap: 16px; font-size: 14px; }
+nav.site a { color: var(--sub); text-decoration: none; }
+nav.site a:hover, nav.site a[aria-current="page"] { color: var(--accent); }
+
+main { padding: 24px 0 48px; }
+
+.hero { padding: 32px 0 16px; }
+.kicker { display: inline-block; background: var(--accent); color: #fff; font-size: 13px; font-weight: 700; padding: 4px 14px; border-radius: 999px; }
+h1 { font-size: clamp(28px, 6vw, 42px); line-height: 1.35; margin: 16px 0 12px; font-weight: 900; letter-spacing: 0.01em; }
+.hl { background: linear-gradient(transparent 62%, var(--mark) 62%); color: var(--accent); }
+.lead { font-size: 17px; color: var(--sub); margin: 0; }
+
+h2 { font-size: 22px; margin: 40px 0 12px; padding-left: 12px; border-left: 6px solid var(--accent); line-height: 1.4; }
+h3 { font-size: 17px; margin: 24px 0 6px; }
+
+.card { background: var(--card); border: 2px solid var(--line); border-radius: 18px; padding: 20px 22px; box-shadow: 4px 5px 0 #e8e1d2; }
+.card + .card { margin-top: 16px; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 12px 0 0; list-style: none; }
+.tags li { background: var(--accent-soft); color: var(--accent); font-size: 14px; font-weight: 700; padding: 4px 12px; border-radius: 999px; }
+
+.links { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.links a { display: block; background: var(--card); border: 2px solid var(--line); border-radius: 14px; padding: 14px 16px; text-decoration: none; color: var(--ink); box-shadow: 3px 4px 0 #e8e1d2; }
+.links a strong { display: block; color: var(--accent); }
+.links a span { font-size: 14px; color: var(--sub); }
+
+ul.check { padding-left: 0; list-style: none; margin: 8px 0 0; }
+ul.check li { padding-left: 28px; position: relative; margin: 6px 0; }
+ul.check li::before { content: ""; position: absolute; left: 4px; top: 0.65em; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); }
+
+dl.info { display: grid; grid-template-columns: max-content 1fr; gap: 6px 20px; margin: 0; }
+dl.info dt { color: var(--sub); font-size: 14px; padding-top: 2px; }
+dl.info dd { margin: 0; }
+@media (max-width: 480px) {
+  dl.info { grid-template-columns: 1fr; gap: 0; }
+  dl.info dd { margin-bottom: 10px; }
+}
+
+.doc h2 { font-size: 19px; margin-top: 32px; }
+.doc ol, .doc ul { padding-left: 1.4em; }
+.doc li { margin: 4px 0; }
+.meta { color: var(--sub); font-size: 14px; }
+
+footer.site { border-top: 2px solid var(--line); padding: 20px 0 32px; font-size: 14px; color: var(--sub); background: var(--paper); }
+footer.site .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+footer.site nav { display: flex; gap: 16px; flex-wrap: wrap; }
+footer.site a { color: var(--sub); }
